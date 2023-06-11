@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Movie{
+            constructor(name,year,actors = []){
+                this.name = name;
+                this.year = year;
+                this.actors = actors;
+            }
+            printDetail(){
+                console.log("Film: " + this.name + "\nRok: " + this.year);
+                for (let index = 0; index < this.actors.length; index++) {
+                    if(index == 0){
+                        console.log("Herci: " + this.actors[index]);
+                    }else{console.log("       "+this.actors[index]);}
+                    
+                }
+            }
+            printLongestActor(){
+                let longest = this.actors[0];
+                for(const one of this.actors){
+                    if (one.length > longest.length){
+                        longest = one;
+                    }
+                }
+                console.log("Najdlhšie meno: " + longest);
+            }
+        }
+
+        let first = new Movie("Decision to Leave",2022,["Hae-il Pak","Seung-mok Yoo","Jeong-hyeon Lee","Yong-woo Park"]);
+        let second = new Movie("Old Boy ",2003,["Min-sik Choi","Ji-tae Yoo","Hye-jeong Kang"]);
+
+        first.printDetail();
+        first.printLongestActor();
+        second.printDetail();
+        second.printLongestActor();
+
+    </script>
+</body>
+</html>
